@@ -177,9 +177,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
-    color: #999;
-    border: 1px solid #ddd;
+    color: #ffffff;
 }
 
 /* Portfolio */
