@@ -1,167 +1,428 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Полёт |  Люксовый салон красоты</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+  <!-- ==========================================================================
+       SEO МЕТА-ТЕГИ (БАЗОВАЯ ОПТИМИЗАЦИЯ)
+       ========================================================================== -->
+  <title>l'orage — Салон Красоты в Минске | Премиальный Уход и Косметология</title>
+  <meta name="description" content="Салон красоты премиум-класса l'orage на Пречистенке. Авторский уход за кожей лица, молекулярное восстановление волос, эстетический макияж и спа-ритуалы в атмосфере абсолютной гармонии. Запишитесь онлайн!">
+  <meta name="keywords" content="салон красоты москва, косметология пречистенка, уход за лицом, восстановление волос, премиум спа салон, макияж визаж москва, салон аврора">
+  <meta name="author" content="l'orage Beauty Salon">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Канонический URL для исключения дублей -->
+  <link rel="canonical" href="https://l'orage-beauty-salon.ru/">
+
+  <!-- ==========================================================================
+       РАЗМЕТКА OPEN GRAPH (ДЛЯ СОЦСЕТЕЙ И МЕССЕНДЖЕРОВ: TG, VK, WHATSAPP)
+       ========================================================================== -->
+  <meta property="og:site_name" content="l'orage Beauty Salon">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="l'orage — Салон Премиальной Косметики и Красоты на Пречистенке">
+  <meta property="og:description" content="Погрузитесь в атмосферу гармонии и безупречного ухода. Авторские SPA-ритуалы, косметология и уход за волосами от дипломированных мастеров. Запишитесь на визит со скидкой.">
+  <meta property="og:url" content="https://l'orage-beauty-salon.ru/">
+  <meta property="og:image" content="https://l'orage-beauty-salon.ru/images/og-preview.jpg"> <!-- Путь к превью-картинке -->
+  <meta property="og:locale" content="ru_RU">
+
+  <!-- ==========================================================================
+       TWITTER CARDS (ОПТИМИЗАЦИЯ ДЛЯ TWITTER/X)
+       ========================================================================== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="l'orage — Салон Премиальной Косметики и Красоты">
+  <meta name="twitter:description" content="Элитное пространство заботы о себе в самом центре Москвы. Уход за кожей лица, волосами и телом.">
+  <meta name="twitter:image" content="https://l'orage-beauty-salon.ru/images/og-preview.jpg">
+
+  <!-- Подключение премиальных шрифтов Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<body class="page">
+<body>
 
-    <header class="header">
-        <nav class="header__nav">
-            <div class="header__logo">Полёт</div>
-            <div class="header__menu">
-                <a href="#portfolio" class="header__link">Портфолио</a>
-                <a href="#benefits" class="header__link">О Компании</a>
-                <a href="#services" class="header__link">Услуги</a>
-                <a href="#reviews" class="header__link">Отзывы</a>
-            </div>
-            <button class="header__btn">Записаться</button>
-        </nav>
-    </header>
+  <!-- ==========================================================================
+       ДЕКОРАТИВНЫЕ 3Д ФОНОВЫЕ ЭЛЕМЕНТЫ
+       ========================================================================== -->
+  <div class="decor-sphere decor-sphere--1"></div>
+  <div class="decor-sphere decor-sphere--2"></div>
+  <div class="decor-crystal decor-crystal--1"></div>
+  <div class="decor-crystal decor-crystal--2"></div>
 
-    <main class="content">
-        <section class="hero">
-            <div class="hero__container">
-                <div class="hero__content">
-                    <h1 class="hero__title">Ваша естественная красота в надежных руках</h1>
-                    <div class="hero__description">Раскроем вашу индивидуальность через премиальный уход и мастерство наших стилистов.</div>
-                    <button class="hero__cta">Узнать больше</button>
-                </div>
-                <div class="hero__image-wrapper">
-                    <div class="hero__image"><img class="hero__img" src="images/heroimg.jpg" alt=""></div>
-                </div>
-            </div>
-        </section>
+  <!-- Контейнер для кастомных уведомлений (Toast) -->
+  <div class="toast-container" id="toastContainer"></div>
 
-        <section class="portfolio" id="portfolio">
-            <div class="portfolio__container">
-                <h2 class="portfolio__title">Наши работы</h2>
-                <div class="portfolio__grid">
-                    <div class="portfolio__item">
-                        <div class="portfolio__img-box"><img src="images/portfolio1.jpg" alt="" class="port__img"></div>
-                        <div class="portfolio__label">Вечерний образ</div>
-                    </div>
-                    <div class="portfolio__item">
-                        <div class="portfolio__img-box"><img src="images/portfolio2.jpg" alt="" class="port__img"></div>
-                        <div class="portfolio__label">Сложное окрашивание</div>
-                    </div>
-                    <div class="portfolio__item">
-                        <div class="portfolio__img-box"><img src="images/portfolio3.jpg" alt="" class="port__img"></div>
-                        <div class="portfolio__label">Уход за лицом</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- ==========================================================================
+       1. ШАПКА САЙТА (HEADER)
+       ========================================================================== -->
+  <header class="header" id="header">
+    <div class="container header__container">
+      <a href="#" class="logo" aria-label="l'orage Главная страница">l'orage</a>
+      
+      <nav class="nav" id="nav" aria-label="Основное меню навигации">
+        <a href="#about" class="nav__link">О нас</a>
+        <a href="#services" class="nav__link">Услуги</a>
+        <a href="#why-us" class="nav__link">Преимущества</a>
+        <a href="#gallery" class="nav__link">Галерея</a>
+        <a href="#booking" class="nav__link">Контакты</a>
+      </nav>
 
-        <section class="benefits" id="benefits">
-            <div class="benefits__container">
-                <div class="benefits__info">
-                    <h2 class="benefits__title">Почему выбирают нас</h2>
-                    <div class="benefits__list">
-                        <div class="benefits__item">
-                            <div class="benefits__subtitle">Премиальные материалы</div>
-                            <div class="benefits__text">Используем только сертифицированную косметику мировых брендов.</div>
-                        </div>
-                        <div class="benefits__item">
-                            <div class="benefits__subtitle">Опытные мастера</div>
-                            <div class="benefits__text">Наши специалисты проходят обучение в лучших школах Европы.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="benefits__visual">
-                    <div class="benefits__bg-image"><img src="images/benefits_img.jpg" alt="" class="ben_img"></div>
-                </div>
-            </div>
-        </section>
- <section class="services" id="services">
-            <div class="services__container">
-                <h2 class="services__title">Услуги салона</h2>
-                <div class="services__grid">
-                    <div class="services__card">
-                        <div class="services__icon"><img src="images/yicon1.jpg" alt="" class="serv_img"></div>
-                        <div class="services__name">Парикмахерский зал</div>
-                        <div class="services__price">от 25 BYN</div>
-                    </div>
-                    <div class="services__card">
-                        <div class="services__icon"><img src="images/yicon2.jpg" alt="" class="serv_img"></div>
-                        <div class="services__name">Косметология</div>
-                        <div class="services__price">от 40 BYN</div>
-                    </div>
-                    <div class="services__card">
-                        <div class="services__icon"><img src="images/yicon3.jpg" alt="" class="serv_img"></div>
-                        <div class="services__name">Маникюр и педикюр</div>
-                        <div class="services__price">от 30 BYN</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <a href="#booking" class="btn btn--primary header__btn" aria-label="Записаться в салон красоты онлайн">Записаться</a>
 
-        <section class="reviews" id="reviews">
-            <div class="reviews__container">
-                <h2 class="reviews__title">Отзывы клиентов</h2>
-                <div class="reviews__slider">
-                    <div class="reviews__item">
-                        <div class="reviews__text">"Прекрасная атмосфера и профессиональный подход. После визита чувствую себя обновленной!"</div>
-                        <div class="reviews__author">Елена Петрова</div>
-                    </div>
-                    <div class="reviews__item">
-                        <div class="reviews__text">"Лучшее окрашивание в моей жизни. Мастер услышал все пожелания."</div>
-                        <div class="reviews__author">Мария Иванова</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-    <div class="footer__container">
-        <div class="footer__main">
-            <div class="footer__brand">
-                <div class="footer__logo">Полёт</div>
-                <div class="footer__description">Ваш оазис красоты и спокойствия. Мы создаем образы, которые вдохновляют.</div>
-            </div>
-            
-            <div class="footer__nav">
-                <div class="footer__column">
-                    <div class="footer__title">Навигация</div>
-                    <div class="footer__list">
-                        <a href="#portfolio" class="footer__link">Портфолио</a>
-                        <a href="#services" class="footer__link">Услуги</a>
-                        <a href="#reviews" class="footer__link">Отзывы</a>
-                    </div>
-                </div>
-                
-                <div class="footer__column">
-                    <div class="footer__title">Контакты</div>
-                    <div class="footer__list">
-                        <div class="footer__contact-item">ул. Эстетики, 15, Москва</div>
-                        <div class="footer__contact-item">+375 (999) 000-00-00</div>
-                        <div class="footer__contact-item">daily: 10:00 — 21:00</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer__socials">
-                <div class="footer__title">Мы в сети</div>
-                <div class="footer__social-links">
-                    <div class="footer__social-icon"><img src="images/footer_icon1.jpg" alt="" class="footer__icon-img"></div>
-                    <div class="footer__social-icon"><img src="images/footer_icon2.jpg" alt="" class="footer__icon-img"></div>
-                    <div class="footer__social-icon"><img src="images/footer_icon3.jpg" alt="" class="footer__icon-img"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer__bottom">
-            <div class="footer__copyright">© 2026 "Полёт" Beauty Salon. Все права защищены.</div>
-            <div class="footer__policy">Политика конфиденциальности</div>
-        </div>
+      <div class="burger" id="burger" role="button" aria-expanded="false" aria-label="Открыть мобильное меню">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </div>
     </div>
-</footer>
+  </header>
+  <main>
+    <!-- ==========================================================================
+         2. ГЛАВНЫЙ ЭКРАН (HERO SECTION)
+         ========================================================================== -->
+    <section class="hero" id="about">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="hero__subtitle">Элитное пространство красоты</span>
+          <h1 class="hero__title">
+            Раскрой свой 
+            <span>естественный блеск</span>
+          </h1>
+          <p class="hero__description">
+            Погрузитесь в атмосферу гармонии и безупречного ухода. Мы объединили передовые технологии эстетической медицины и авторские ритуалы для совершенства вашей кожи и волос.
+          </p>
+          <div class="hero__actions">
+            <a href="#booking" class="btn btn--primary">Онлайн запись</a>
+            <a href="#services" class="btn btn--secondary">Наши услуги</a>
+          </div>
+        </div>
 
+        <div class="hero__visual">
+          <div class="hero__glow-ring"></div>
+          
+          <!-- Заглушка для главного фото модели с эффектом 3D парения -->
+          <div class="hero__image-wrapper">
+            <div class=" image-placeholder">
+              <img src="images/img1hero.jpg" alt="" class="heroimg">
+            </div>
+          </div>
+
+          <!-- 3D Заглушка косметического флакона -->
+          <div class=" image-placeholder hero__bottle-placeholder">
+            <img src="images/img2hero.jpg" alt="" class="heroimg2">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. СЕКЦИЯ УСЛУГ (SERVICES SECTION)
+         ========================================================================== -->
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="services__header">
+          <span class="section-subtitle">Профессиональный уход</span>
+          <h2 class="section-title">Наши услуги</h2>
+        </div>
+
+        <div class="services__grid">
+          <!-- Услуга 1 -->
+          <article class="service-card">
+            <div class="service-card__img-container">
+              <div class="image-placeholder service-card__placeholder">
+                <img src="images/servimg1.jpg" alt="" class="serimg">
+              </div>
+            </div>
+            <h3 class="service-card__title">Авторский уход</h3>
+            <p class="service-card__description">
+              Индивидуальные программы глубокого очищения, питания и омоложения кожи лица с использованием косметики премиум-класса.
+            </p>
+            <a href="#booking" class="btn btn--secondary btn-select-service" data-service="Авторский уход за лицом">Выбрать</a>
+          </article>
+
+          <!-- Услуга 2 -->
+          <article class="service-card">
+            <div class="service-card__img-container">
+              <div class="image-placeholder service-card__placeholder">
+                <img src="images/serimg2.jpg" alt="" class="serimg">
+              </div>
+            </div>
+            <h3 class="service-card__title">Забота о волосах</h3>
+            <p class="service-card__description">
+              Стильные стрижки, сложное окрашивание, молекулярное восстановление и SPA-ритуалы для роскошного блеска ваших волос.
+            </p>
+            <a href="#booking" class="btn btn--secondary btn-select-service" data-service="Молекулярное восстановление волос">Выбрать</a>
+          </article>
+
+          <!-- Услуга 3 -->
+          <article class="service-card">
+            <div class="service-card__img-container">
+              <div class="image-placeholder service-card__placeholder">
+                <img src="images/serimg3.jpg" alt="" class="serimg">
+              </div>
+            </div>
+            <h3 class="service-card__title">Эстетика макияжа</h3>
+            <p class="service-card__description">
+              Дневной, вечерний и свадебный макияж от ведущих визажистов, подчеркивающий вашу уникальную архитектуру лица.
+            </p>
+            <a href="#booking" class="btn btn--secondary btn-select-service" data-service="Макияж и стилистика">Выбрать</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. ПРЕИМУЩЕСТВА (WHY CHOOSE US)
+         ========================================================================== -->
+    <section class="section benefits" id="why-us">
+      <div class="container">
+        <div class="services__header">
+          <span class="section-subtitle">Наши ценности</span>
+          <h2 class="section-title">Почему выбирают нас</h2>
+        </div>
+
+        <div class="benefits__grid">
+          <!-- Карточка 1 -->
+          <div class="benefit-card">
+            <div class="benefit-card__icon-wrapper">
+              <div class="image-placeholder benefit-card__icon-placeholder">
+                <img src="images/d3img1.jpg" alt="" class="benimg">
+              </div>
+            </div>
+            <h3 class="benefit-card__title">Профи мастера</h3>
+            <p class="benefit-card__description">
+              Дипломированные специалисты с международным опытом и тонким чувством стиля.
+            </p>
+          </div>
+
+          <!-- Карточка 2 -->
+          <div class="benefit-card">
+            <div class="benefit-card__icon-wrapper">
+              <div class="image-placeholder benefit-card__icon-placeholder">
+               <img src="images/d3img2.jpg" alt="" class="benimg">
+              </div>
+            </div>
+            <h3 class="benefit-card__title">Эко-средства</h3>
+            <p class="benefit-card__description">
+              Используем сертифицированные гипоаллергенные составы ведущих мировых брендов.
+            </p>
+          </div>
+
+          <!-- Карточка 3 -->
+          <div class="benefit-card">
+            <div class="benefit-card__icon-wrapper">
+              <div class="image-placeholder benefit-card__icon-placeholder">
+               <img src="images/d3img3.jpg" alt="" class="benimg">
+              </div>
+            </div>
+            <h3 class="benefit-card__title">Атмосфера SPA</h3>
+            <p class="benefit-card__description">
+              Приватные кабинеты, расслабляющая музыка и премиальный уровень сервиса.
+            </p>
+          </div>
+
+          <!-- Карточка 4 -->
+          <div class="benefit-card">
+            <div class="benefit-card__icon-wrapper">
+              <div class="image-placeholder benefit-card__icon-placeholder">
+               <img src="images/d3img4.jpg" alt="" class="benimg">
+              </div>
+            </div>
+            <h3 class="benefit-card__title">Персональный подход</h3>
+            <p class="benefit-card__description">
+              Каждая процедура адаптируется под ваши индивидуальные особенности и пожелания.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. ГАЛЕРЕЯ (GALLERY SECTION)
+         ========================================================================== -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <div class="services__header">
+          <span class="section-subtitle">Эстетика в деталях</span>
+          <h2 class="section-title">Галерея работ</h2>
+        </div>
+
+        <div class="gallery__grid">
+          <!-- Элемент 1 (Большой) -->
+          <div class="gallery__item gallery__item--big-1" aria-label="Интерьер нашего премиального салона красоты">
+            <div class="image-placeholder gallery__placeholder">
+              <img src="images/gall1img.jpg" alt="" class="gallery--img">
+            </div>
+            <div class="gallery__overlay">
+              <span class="gallery__view-btn">Смотреть</span>
+            </div>
+          </div>
+
+          <!-- Элемент 2 -->
+          <div class="gallery__item" aria-label="Премиальный ногтевой сервис и маникюр">
+            <div class="image-placeholder gallery__placeholder">
+        <img src="images/gall2img.jpg" alt="" class="gallery--img">        </div>
+            <div class="gallery__overlay">
+              <span class="gallery__view-btn">Смотреть</span>
+            </div>
+          </div>
+
+          <!-- Элемент 3 -->
+          <div class="gallery__item" aria-label="Аппаратный и эстетический уход за лицом">
+            <div class="image-placeholder gallery__placeholder">
+              <img src="images/gall3img.jpg" alt="" class="gallery--img">
+            </div>
+            <div class="gallery__overlay">
+              <span class="gallery__view-btn">Смотреть</span>
+            </div>
+          </div>
+
+          <!-- Элемент 4 (Высокий) -->
+          <div class="gallery__item gallery__item--tall" aria-label="Довольный клиент после уходовых процедур">
+            <div class="image-placeholder gallery__placeholder">
+              <img src="images/gall4img.jpg" alt="" class="gallery--img">
+            </div>
+            <div class="gallery__overlay">
+              <span class="gallery__view-btn">Смотреть</span>
+            </div>
+          </div>
+
+          <!-- Элемент 5 -->
+          <div class="gallery__item" aria-label="Профессиональная укладка и окрашивание волос">
+            <div class="image-placeholder gallery__placeholder">
+              <img src="images/gall5img.jpg" alt="" class="gallery--img">
+            </div>
+            <div class="gallery__overlay">
+              <span class="gallery__view-btn">Смотреть</span>
+            </div>
+          </div>
+
+          <!-- Элемент 6 -->
+          <div class="gallery__item" aria-label="Вечерний макияж от визажиста">
+            <div class="image-placeholder gallery__placeholder">
+              <img src="images/gall6img.jpg" alt="" class="gallery--img">
+            </div>
+            <div class="gallery__overlay">
+              <span class="gallery__view-btn">Смотреть</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. ЗАПИСЬ И КОНТАКТЫ (BOOKING & CONTACTS)
+         ========================================================================== -->
+    <section class="section booking" id="booking">
+      <div class="container">
+        <div class="booking__grid">
+          <!-- Стеклянная Форма (Макет 1-в-1: Имя, Email, Дата, Услуга) -->
+          <form class="booking-form" id="bookingForm" novalidate>
+            <h3 class="booking-form__title">Записаться на визит</h3>
+            
+            <div class="form-group">
+              <label class="form-group__label" for="clientName">Ваше Имя</label>
+              <input type="text" id="clientName" class="form-group__input" placeholder="Иван Иванов" autocomplete="name" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-group__label" for="clientEmail">Email</label>
+              <input type="email" id="clientEmail" class="form-group__input" placeholder="example@mail.ru" autocomplete="email" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-group__label" for="bookingDate">Желаемая Дата</label>
+              <input type="date" id="bookingDate" class="form-group__input" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-group__label" for="bookingService">Выберите Услугу</label>
+              <select id="bookingService" class="form-group__select" required>
+                <option value="" disabled selected>-- Выберите процедуру --</option>
+                <option value="Авторский уход за лицом">Авторский уход за лицом</option>
+                <option value="Молекулярное восстановление волос">Молекулярное восстановление волос</option>
+                <option value="Макияж и стилистика">Макияж и стилистика</option>
+                <option value="Премиум ногтевой сервис">Премиум ногтевой сервис</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn--primary booking-form__btn" id="submitBtn">
+              <span class="spinner" id="btnSpinner"></span>
+              <span id="btnText">Забронировать время</span>
+            </button>
+          </form>
+
+          <!-- Информационный Блок -->
+          <div class="booking__info">
+            <div class="contact-item">
+              <span class="contact-item__label">Наш Адрес</span>
+              <p class="contact-item__text">г. Минск, ул. Пречистенка 12</p>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-item__label">Телефон для связи</span>
+              <a href="tel:+74951234567" class="contact-item__value" aria-label="Позвонить в салон по номеру +7 (495) 123-45-67">+7 (495) 123-45-67</a>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-item__label">Режим работы</span>
+              <p class="contact-item__text">Ежедневно с 10:00 до 22:00</p>
+            </div>
+
+            <!-- Соцсети -->
+            <div>
+              <span class="contact-item__label">Мы в соцсетях</span>
+              <div class="socials">
+                <a href="https://t.me/l'orage_beauty" class="social-btn" title="Наш Telegram-канал" target="_blank" rel="noopener">TG</a>
+                <a href="https://vk.com/l'orage_beauty" class="social-btn" title="Наша группа ВКонтакте" target="_blank" rel="noopener">VK</a>
+                <a href="#" class="social-btn" title="Мы на Pinterest" target="_blank" rel="noopener">PIN</a>
+              </div>
+            </div>
+          </div>
+
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       8. ПОДВАЛ (FOOTER)
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <div class="logo footer__logo">l'orage</div>
+          <p class="footer__description">
+            Особое видение естественной красоты. Премиальные ритуалы заботы о себе в расслабляющей атмосфере.
+          </p>
+        </div>
+
+        <div>
+          <span class="footer__links-title">Навигация</span>
+          <ul class="footer__list">
+            <li class="footer__item"><a href="#about" class="footer__link">О салоне</a></li>
+            <li class="footer__item"><a href="#services" class="footer__link">Услуги</a></li>
+            <li class="footer__item"><a href="#why-us" class="footer__link">Преимущества</a></li>
+            <li class="footer__item"><a href="#gallery" class="footer__link">Галерея работ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <span class="footer__links-title">Юридическая инфо</span>
+          <ul class="footer__list">
+            <li class="footer__item"><a href="#" class="footer__link">Политика приватности</a></li>
+            <li class="footer__item"><a href="#" class="footer__link">Публичная оферта</a></li>
+            <li class="footer__item"><a href="#" class="footer__link">Лицензии</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span class="footer__copyright">© 2026 l'orage Beauty Salon. Все права защищены.</span>
+       
+      </div>
+    </div>
+  </footer>
+<script src="main.js"></script>
 </body>
 </html>
