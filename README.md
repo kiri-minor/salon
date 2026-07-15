@@ -31,4 +31,4 @@
 ### 1. Клонирование
 ```bash
 git clone https://github.com/kiri-minor/salon.git
-cd Lorage
+cd salon
